@@ -1,0 +1,582 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo mono">CIRK</span>
+      <div class="nav-links">
+        <a href="#model">Model</a>
+        <a href="#execution">Execution</a>
+        <a href="#examples">Examples</a>
+        <a href="https://github.com/core-618/cirk" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge mono">Open Standard · MIT</div>
+      <h1>
+        AI writes the code.<br />
+        <span class="accent">CIRK governs the execution.</span>
+      </h1>
+      <p class="hero-sub">
+        CIRK is an AI-native execution standard.<br />
+        It replaces story points with execution governance.
+      </p>
+      <div class="hero-cta">
+        <a href="#model" class="btn-primary">Read the standard</a>
+        <a href="https://github.com/core-618/cirk" class="btn-ghost" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SHIFT -->
+  <section class="section shift-section">
+    <div class="container narrow">
+      <p class="label mono">The shift</p>
+      <h2>Story points measure how humans code.</h2>
+      <h2 class="accent">CIRK measures how AI executes.</h2>
+      <div class="shift-grid">
+        <div class="shift-card old">
+          <p class="shift-label mono">Before</p>
+          <ul>
+            <li>Code takes time</li>
+            <li>Effort is the bottleneck</li>
+            <li>Story points estimate hours</li>
+          </ul>
+        </div>
+        <div class="shift-arrow">→</div>
+        <div class="shift-card new">
+          <p class="shift-label mono">Now</p>
+          <ul>
+            <li>Code is generated in seconds</li>
+            <li>Execution is the bottleneck</li>
+            <li>CIRK governs how it runs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MODEL -->
+  <section class="section" id="model">
+    <div class="container">
+      <p class="label mono">The model</p>
+      <h2>Four dimensions. One vector.</h2>
+      <p class="section-sub">Each task is scored across four dimensions, from 1 to 3.</p>
+
+      <div class="model-formula mono">[ C · I · R · K ]</div>
+
+      <div class="dimensions-grid">
+        <div class="dim-card">
+          <div class="dim-letter accent">C</div>
+          <h3>Context</h3>
+          <p>How much system understanding does the agent need?</p>
+          <table>
+            <tr><td class="score mono">C1</td><td>Isolated logic, minimal context</td></tr>
+            <tr><td class="score mono">C2</td><td>Multiple components, pattern awareness</td></tr>
+            <tr><td class="score mono">C3</td><td>Cross-system or architectural understanding</td></tr>
+          </table>
+        </div>
+
+        <div class="dim-card">
+          <div class="dim-letter" style="color: var(--green)">I</div>
+          <h3>Iteration</h3>
+          <p>How likely is convergence to require multiple attempts?</p>
+          <table>
+            <tr><td class="score mono">I1</td><td>Deterministic, one pass</td></tr>
+            <tr><td class="score mono">I2</td><td>Some iteration (2–3 cycles)</td></tr>
+            <tr><td class="score mono">I3</td><td>High ambiguity or complexity</td></tr>
+          </table>
+        </div>
+
+        <div class="dim-card">
+          <div class="dim-letter" style="color: var(--amber)">R</div>
+          <h3>Review</h3>
+          <p>How much human validation is required?</p>
+          <table>
+            <tr><td class="score mono">R1</td><td>Quick validation</td></tr>
+            <tr><td class="score mono">R2</td><td>Rule-level validation</td></tr>
+            <tr><td class="score mono">R3</td><td>Deep architectural or critical review</td></tr>
+          </table>
+        </div>
+
+        <div class="dim-card">
+          <div class="dim-letter" style="color: var(--purple)">K</div>
+          <h3>Integration Risk</h3>
+          <p>How complex or sensitive is deployment?</p>
+          <table>
+            <tr><td class="score mono">K1</td><td>Safe, additive</td></tr>
+            <tr><td class="score mono">K2</td><td>Modifies existing behavior</td></tr>
+            <tr><td class="score mono">K3</td><td>Coordinated rollout or migration</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Score table -->
+      <div class="score-table-wrap">
+        <p class="label mono">Composite score</p>
+        <p class="score-formula mono">Score = C + I + R + K</p>
+        <div class="score-table">
+          <div class="score-row"><span class="mono score-range">4–5</span><span class="badge trivial">Trivial</span><span class="score-note">Autonomous execution</span></div>
+          <div class="score-row"><span class="mono score-range">6–7</span><span class="badge simple">Simple</span><span class="score-note">Guided execution</span></div>
+          <div class="score-row"><span class="mono score-range">8–9</span><span class="badge medium">Medium</span><span class="score-note">Draft-first or guided</span></div>
+          <div class="score-row"><span class="mono score-range">10–11</span><span class="badge complex">Complex</span><span class="score-note">Supervised execution</span></div>
+          <div class="score-row"><span class="mono score-range">12</span><span class="badge split">Split Required</span><span class="score-note">Must decompose task</span></div>
+        </div>
+        <p class="score-note-footer">The vector matters more than the score. Two tasks with the same total may require completely different execution policies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXECUTION MAPPING -->
+  <section class="section alt-section" id="execution">
+    <div class="container">
+      <p class="label mono">Execution mapping</p>
+      <h2>CIRK as policy-as-code.</h2>
+      <p class="section-sub">CIRK determines autonomy boundaries, approval requirements, and deployment constraints.</p>
+
+      <div class="exec-grid">
+        <div class="exec-card">
+          <div class="exec-mode mono">Autonomous</div>
+          <div class="exec-condition mono">Score 4–5 · R1</div>
+          <p>Agent executes without human intervention. Auto-approval allowed.</p>
+        </div>
+        <div class="exec-card">
+          <div class="exec-mode mono">Guided</div>
+          <div class="exec-condition mono">Score 6–9</div>
+          <p>Agent executes. Human review required before merge.</p>
+        </div>
+        <div class="exec-card">
+          <div class="exec-mode mono">Draft-First</div>
+          <div class="exec-condition mono">I3 or R3</div>
+          <p>Agent produces draft. Human validates before any commit.</p>
+        </div>
+        <div class="exec-card">
+          <div class="exec-mode mono">Supervised</div>
+          <div class="exec-condition mono">Score ≥ 10 · K3</div>
+          <p>Step-by-step execution. Approval per step. Deploy runbook required.</p>
+        </div>
+        <div class="exec-card blocked">
+          <div class="exec-mode mono">Blocked</div>
+          <div class="exec-condition mono">Score = 12</div>
+          <p>Task must be decomposed. Execution not allowed.</p>
+        </div>
+      </div>
+
+      <div class="policy-rules">
+        <p class="label mono">Policy rules</p>
+        <div class="rule-row"><span class="mono rule-signal">I3</span><span>Draft-first required</span></div>
+        <div class="rule-row"><span class="mono rule-signal">R3</span><span>Auto-approval disabled</span></div>
+        <div class="rule-row"><span class="mono rule-signal">K3</span><span>Deploy runbook required</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section class="section" id="examples">
+    <div class="container narrow">
+      <p class="label mono">Examples</p>
+      <h2>CIRK in practice.</h2>
+
+      <div class="examples-list">
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C1 I1 R1 K2</span>
+            <span class="ex-score mono">→ 5</span>
+            <span class="badge trivial">Trivial</span>
+          </div>
+          <p class="ex-desc">Add field to model — autonomous execution possible.</p>
+        </div>
+
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C2 I1 R2 K2</span>
+            <span class="ex-score mono">→ 7</span>
+            <span class="badge simple">Simple</span>
+          </div>
+          <p class="ex-desc">New API endpoint — guided execution, review before merge.</p>
+        </div>
+
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C2 I2 R3 K1</span>
+            <span class="ex-score mono">→ 8</span>
+            <span class="badge medium">Medium</span>
+          </div>
+          <p class="ex-desc">Business logic change — draft-first, deep review, no auto-merge.</p>
+        </div>
+
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C3 I2 R3 K2</span>
+            <span class="ex-score mono">→ 10</span>
+            <span class="badge complex">Complex</span>
+          </div>
+          <p class="ex-desc">Approval system — supervised, approval per step.</p>
+        </div>
+
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C3 I2 R3 K3</span>
+            <span class="ex-score mono">→ 11</span>
+            <span class="badge complex">Complex</span>
+          </div>
+          <p class="ex-desc">Cross-system auth change — coordinated deployment, runbook required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN STANDARD -->
+  <section class="section alt-section">
+    <div class="container narrow center">
+      <p class="label mono">Open by design</p>
+      <h2>Not tied to any tool, platform, or vendor.</h2>
+      <p class="section-sub">
+        CIRK can be used in task tracking systems, AI coding agents,
+        orchestration pipelines, and internal developer tools.
+      </p>
+      <div class="open-grid">
+        <div class="open-card">Task trackers</div>
+        <div class="open-card">AI coding agents</div>
+        <div class="open-card">Orchestration pipelines</div>
+        <div class="open-card">Developer tools</div>
+      </div>
+      <p class="orbit-note">
+        <a href="https://orbit618.com" target="_blank" rel="noopener">Orbit618</a> is one implementation environment where CIRK is used to govern AI execution.
+        It is not required to adopt CIRK.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container narrow center">
+      <h2>Start using CIRK.</h2>
+      <p class="section-sub">MIT licensed. No dependencies. Works with anything.</p>
+      <div class="hero-cta">
+        <a href="https://github.com/core-618/cirk" class="btn-primary" target="_blank" rel="noopener">View on GitHub →</a>
+        <a href="mailto:hello@core618.com" class="btn-ghost">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="mono footer-logo">CIRK</span>
+      <span class="footer-meta">MIT License · <a href="https://github.com/core-618/cirk" target="_blank" rel="noopener">GitHub</a> · <a href="mailto:hello@core618.com">hello@core618.com</a></span>
+      <span class="footer-meta">A standard by <a href="https://core618.com" target="_blank" rel="noopener">Core618</a></span>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* ── Nav ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(17,17,17,0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo { font-size: 14px; font-weight: 500; color: var(--text); letter-spacing: 0.08em; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 13px; color: var(--text-muted); transition: color 0.15s; }
+  .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+  /* ── Layout ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .container.narrow { max-width: 760px; }
+  .container.center { text-align: center; }
+  .section { padding: 96px 0; }
+  .alt-section { background: var(--bg-container); }
+
+  /* ── Hero ── */
+  .hero { padding: 120px 0 96px; }
+  .hero-badge {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-border);
+    border-radius: 20px;
+    padding: 4px 12px;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: var(--text);
+  }
+  .hero-sub {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.15s;
+  }
+  .btn-primary:hover { opacity: 0.85; text-decoration: none; }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .btn-ghost:hover { border-color: var(--border-hover); color: var(--text); text-decoration: none; }
+
+  /* ── Typography ── */
+  .label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    display: block;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .accent { color: var(--accent); }
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-top: 12px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  /* ── Shift ── */
+  .shift-section h2 { line-height: 1.25; }
+  .shift-grid {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+  .shift-card {
+    flex: 1;
+    min-width: 220px;
+    padding: 24px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+  .shift-card.old { background: var(--bg-card); }
+  .shift-card.new { background: var(--accent-dim); border-color: var(--accent-border); }
+  .shift-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; display: block; }
+  .shift-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .shift-card li { font-size: 14px; color: var(--text-muted); }
+  .shift-card.new li { color: var(--text); }
+  .shift-arrow { font-size: 24px; color: var(--text-secondary); flex-shrink: 0; }
+
+  /* ── Model ── */
+  .model-formula {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--text-secondary);
+    margin: 40px 0 48px;
+    letter-spacing: 0.1em;
+  }
+  .dimensions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+  .dim-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+  }
+  .dim-letter {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .dim-card h3 { font-size: 1rem; font-weight: 500; margin-bottom: 8px; }
+  .dim-card > p { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+  .dim-card table { width: 100%; border-collapse: collapse; }
+  .dim-card td { font-size: 13px; padding: 5px 0; vertical-align: top; }
+  .dim-card td:first-child { color: var(--text-secondary); width: 32px; padding-right: 8px; }
+  .dim-card td:last-child { color: var(--text-muted); }
+
+  /* ── Score table ── */
+  .score-table-wrap {
+    background: var(--bg-container);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    max-width: 680px;
+  }
+  .score-formula {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    margin: 12px 0 24px;
+  }
+  .score-table { display: flex; flex-direction: column; gap: 8px; }
+  .score-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .score-row:last-child { border-bottom: none; }
+  .score-range { min-width: 44px; color: var(--text-secondary); font-size: 13px; }
+  .score-note { font-size: 13px; color: var(--text-muted); }
+  .score-note-footer { margin-top: 20px; font-size: 13px; color: var(--text-secondary); font-style: italic; line-height: 1.5; }
+
+  /* ── Badges ── */
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge.trivial  { background: var(--green-dim);  color: var(--green);  border: 1px solid rgba(16,185,129,0.2); }
+  .badge.simple   { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-border); }
+  .badge.medium   { background: var(--amber-dim);  color: var(--amber);  border: 1px solid rgba(245,158,11,0.2); }
+  .badge.complex  { background: rgba(239,68,68,0.1); color: #ef4444; border: 1px solid rgba(239,68,68,0.2); }
+  .badge.split    { background: rgba(139,92,246,0.1); color: var(--purple); border: 1px solid rgba(139,92,246,0.2); }
+
+  /* ── Execution ── */
+  .exec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .exec-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .exec-card.blocked { border-color: rgba(139,92,246,0.3); }
+  .exec-mode { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 6px; letter-spacing: 0.04em; }
+  .exec-condition { font-size: 12px; color: var(--accent); margin-bottom: 12px; }
+  .exec-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .policy-rules { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; max-width: 480px; }
+  .rule-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+  }
+  .rule-row:last-child { border-bottom: none; }
+  .rule-signal { color: var(--amber); font-size: 13px; min-width: 28px; }
+  .rule-row span:last-child { font-size: 13px; color: var(--text-muted); }
+
+  /* ── Examples ── */
+  .examples-list { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .example-item {
+    padding: 20px 24px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+  }
+  .example-item:last-child { border-bottom: none; }
+  .ex-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+  .ex-vector { font-size: 14px; color: var(--text); font-weight: 500; }
+  .ex-score  { font-size: 14px; color: var(--text-secondary); }
+  .ex-desc   { font-size: 13px; color: var(--text-muted); }
+
+  /* ── Open standard ── */
+  .open-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 32px 0;
+  }
+  .open-card {
+    font-size: 13px;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 8px 16px;
+  }
+  .orbit-note {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 24px;
+    line-height: 1.6;
+  }
+
+  /* ── CTA ── */
+  .cta-section h2 { margin-bottom: 8px; }
+  .cta-section .section-sub { margin-bottom: 32px; }
+  .cta-section .hero-cta { justify-content: center; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-logo { font-size: 13px; color: var(--text-secondary); letter-spacing: 0.08em; }
+  .footer-meta { font-size: 12px; color: var(--text-secondary); }
+  .footer-meta a { color: var(--text-secondary); }
+  .footer-meta a:hover { color: var(--text); }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .nav-links { gap: 16px; }
+    .shift-arrow { transform: rotate(90deg); }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>

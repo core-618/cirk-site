@@ -279,189 +279,183 @@ import Layout from '../layouts/Layout.astro';
       <h2>CIRK in practice.</h2>
       <p class="section-sub">Each vector maps to concrete execution behavior, with reasoning for each dimension.</p>
 
-      <div class="examples-tabs">
-        <div class="ex-domain">
-          <p class="ex-domain-label mono">Backend</p>
-          <div class="examples-list">
+      <!-- Column headers -->
+      <div class="ex-headers">
+        <p class="ex-domain-label mono">Backend</p>
+        <p class="ex-domain-label mono">Frontend</p>
+        <p class="ex-domain-label mono">Agent</p>
+      </div>
 
-            <div class="example-item">
-              <div class="ex-header">
-                <span class="ex-vector mono">C1 I1 R1 K1</span>
-                <span class="ex-score mono">→ 4</span>
-                <span class="badge trivial">Trivial</span>
-              </div>
-              <p class="ex-task">Add read-only status endpoint</p>
-              <div class="ex-reasoning">
-                <span class="ex-r-item"><span class="mono ex-r-dim accent">C1</span> local, isolated change</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I1</span> deterministic implementation</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R1</span> low review burden</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K1</span> low rollout risk</span>
-              </div>
-              <div class="ex-behavior">
-                <span class="ex-b-item ok">✓ Autonomous execution</span>
-                <span class="ex-b-item ok">✓ Auto-approval allowed</span>
-              </div>
-            </div>
+      <!-- Flat 3×3 grid — rows auto-align by height -->
+      <div class="examples-grid">
 
-            <div class="example-item">
-              <div class="ex-header">
-                <span class="ex-vector mono">C2 I2 R3 K1</span>
-                <span class="ex-score mono">→ 8</span>
-                <span class="badge medium">Medium</span>
-              </div>
-              <p class="ex-task">Login API</p>
-              <div class="ex-reasoning">
-                <span class="ex-r-item"><span class="mono ex-r-dim accent">C2</span> moderate context across auth components</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I2</span> validation and edge cases require iteration</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R3</span> security-sensitive — strong review required</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K1</span> rollout can remain contained</span>
-              </div>
-              <div class="ex-behavior">
-                <span class="ex-b-item ok">✓ Agent can prepare implementation</span>
-                <span class="ex-b-item warn">⚠ Human review mandatory</span>
-                <span class="ex-b-item warn">⚠ Auto-merge disabled</span>
-              </div>
-            </div>
-
-            <div class="example-item">
-              <div class="ex-header">
-                <span class="ex-vector mono">C2 I2 R3 K3</span>
-                <span class="ex-score mono">→ 10</span>
-                <span class="badge complex">Complex</span>
-              </div>
-              <p class="ex-task">Billing webhook change</p>
-              <div class="ex-reasoning">
-                <span class="ex-r-item"><span class="mono ex-r-dim accent">C2</span> touches business-critical logic</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I2</span> correctness may require several cycles</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R3</span> review is mandatory</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K3</span> bad rollout can create financial issues</span>
-              </div>
-              <div class="ex-behavior">
-                <span class="ex-b-item block">✕ Supervised execution</span>
-                <span class="ex-b-item block">✕ Approval per step</span>
-                <span class="ex-b-item block">✕ Deploy runbook required</span>
-              </div>
-            </div>
-
+        <!-- ROW 1 — Trivial -->
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C1 I1 R1 K1</span>
+            <span class="ex-score mono">→ 4</span>
+            <span class="badge trivial">Trivial</span>
+          </div>
+          <p class="ex-task">Add read-only status endpoint</p>
+          <div class="ex-reasoning">
+            <span class="ex-r-item"><span class="mono ex-r-dim accent">C1</span> local, isolated change</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I1</span> deterministic implementation</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R1</span> low review burden</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K1</span> low rollout risk</span>
+          </div>
+          <div class="ex-behavior">
+            <span class="ex-b-item ok">✓ Autonomous execution</span>
+            <span class="ex-b-item ok">✓ Auto-approval allowed</span>
           </div>
         </div>
 
-        <div class="ex-domain">
-          <p class="ex-domain-label mono">Frontend</p>
-          <div class="examples-list">
-
-            <div class="example-item">
-              <div class="ex-header">
-                <span class="ex-vector mono">C1 I1 R1 K1</span>
-                <span class="ex-score mono">→ 4</span>
-                <span class="badge trivial">Trivial</span>
-              </div>
-              <p class="ex-task">Update button color token</p>
-              <div class="ex-reasoning">
-                <span class="ex-r-item"><span class="mono ex-r-dim accent">C1</span> local visual change</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I1</span> deterministic implementation</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R1</span> minimal review burden</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K1</span> low rollout risk</span>
-              </div>
-              <div class="ex-behavior">
-                <span class="ex-b-item ok">✓ Autonomous execution</span>
-                <span class="ex-b-item ok">✓ No checkpoints needed</span>
-              </div>
-            </div>
-
-            <div class="example-item">
-              <div class="ex-header">
-                <span class="ex-vector mono">C2 I3 R2 K2</span>
-                <span class="ex-score mono">→ 9</span>
-                <span class="badge medium">Medium</span>
-              </div>
-              <p class="ex-task">Dashboard layout revision</p>
-              <div class="ex-reasoning">
-                <span class="ex-r-item"><span class="mono ex-r-dim accent">C2</span> touches multiple components</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I3</span> UX refinement requires iteration</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R2</span> functional review, not architectural</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K2</span> changes existing behavior</span>
-              </div>
-              <div class="ex-behavior">
-                <span class="ex-b-item warn">⚠ Draft-first required (I3)</span>
-                <span class="ex-b-item warn">⚠ Human review before merge</span>
-              </div>
-            </div>
-
-            <div class="example-item">
-              <div class="ex-header">
-                <span class="ex-vector mono">C3 I3 R3 K2</span>
-                <span class="ex-score mono">→ 11</span>
-                <span class="badge complex">Complex</span>
-              </div>
-              <p class="ex-task">Auth UI redesign (login + recovery flows)</p>
-              <div class="ex-reasoning">
-                <span class="ex-r-item"><span class="mono ex-r-dim accent">C3</span> cross-flow understanding required</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I3</span> multiple design and functional iterations</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R3</span> UX + correctness review required</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K2</span> changes a critical entry point</span>
-              </div>
-              <div class="ex-behavior">
-                <span class="ex-b-item block">✕ Supervised execution</span>
-                <span class="ex-b-item block">✕ Approval per step</span>
-                <span class="ex-b-item block">✕ Architect sign-off required</span>
-              </div>
-            </div>
-
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C1 I1 R1 K1</span>
+            <span class="ex-score mono">→ 4</span>
+            <span class="badge trivial">Trivial</span>
+          </div>
+          <p class="ex-task">Update button color token</p>
+          <div class="ex-reasoning">
+            <span class="ex-r-item"><span class="mono ex-r-dim accent">C1</span> local visual change</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I1</span> deterministic implementation</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R1</span> minimal review burden</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K1</span> low rollout risk</span>
+          </div>
+          <div class="ex-behavior">
+            <span class="ex-b-item ok">✓ Autonomous execution</span>
+            <span class="ex-b-item ok">✓ No checkpoints needed</span>
           </div>
         </div>
 
-        <div class="ex-domain">
-          <p class="ex-domain-label mono">Agent</p>
-          <div class="examples-list">
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C1 I1 R1 K1</span>
+            <span class="ex-score mono">→ 4</span>
+            <span class="badge trivial">Trivial</span>
+          </div>
+          <p class="ex-task">Rename internal variable and update references</p>
+          <div class="ex-reasoning">
+            <span class="ex-r-item"><span class="mono ex-r-dim accent">C1</span> local, contained change</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I1</span> deterministic, no ambiguity</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R1</span> lightweight validation enough</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K1</span> no release risk</span>
+          </div>
+          <div class="ex-behavior">
+            <span class="ex-b-item ok">✓ Agent executes directly</span>
+            <span class="ex-b-item ok">✓ Lightweight validation only</span>
+          </div>
+        </div>
 
-            <div class="example-item">
-              <div class="ex-header">
-                <span class="ex-vector mono">C1 I1 R1 K1</span>
-                <span class="ex-score mono">→ 4</span>
-                <span class="badge trivial">Trivial</span>
-              </div>
-              <p class="ex-task">Rename internal variable and update references</p>
-              <div class="ex-reasoning">
-                <span class="ex-r-item"><span class="mono ex-r-dim accent">C1</span> local, contained change</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I1</span> deterministic, no ambiguity</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R1</span> lightweight validation enough</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K1</span> no release risk</span>
-              </div>
-              <div class="ex-behavior">
-                <span class="ex-b-item ok">✓ Agent executes directly</span>
-                <span class="ex-b-item ok">✓ Lightweight validation only</span>
-              </div>
-            </div>
+        <!-- ROW 2 — Medium -->
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C2 I2 R3 K1</span>
+            <span class="ex-score mono">→ 8</span>
+            <span class="badge medium">Medium</span>
+          </div>
+          <p class="ex-task">Login API</p>
+          <div class="ex-reasoning">
+            <span class="ex-r-item"><span class="mono ex-r-dim accent">C2</span> moderate context across auth components</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I2</span> validation and edge cases require iteration</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R3</span> security-sensitive — strong review required</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K1</span> rollout can remain contained</span>
+          </div>
+          <div class="ex-behavior">
+            <span class="ex-b-item ok">✓ Agent can prepare implementation</span>
+            <span class="ex-b-item warn">⚠ Human review mandatory</span>
+            <span class="ex-b-item warn">⚠ Auto-merge disabled</span>
+          </div>
+        </div>
 
-            <div class="example-item">
-              <div class="ex-header">
-                <span class="ex-vector mono">C2 I3 R2 K2</span>
-                <span class="ex-score mono">→ 9</span>
-                <span class="badge medium">Medium</span>
-              </div>
-              <p class="ex-task">Refactor repository layer for shared patterns</p>
-              <div class="ex-reasoning">
-                <span class="ex-r-item"><span class="mono ex-r-dim accent">C2</span> shared patterns across modules</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I3</span> exploratory, convergence uncertain</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R2</span> review before full implementation</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K2</span> changes existing behavior</span>
-              </div>
-              <div class="ex-behavior">
-                <span class="ex-b-item warn">⚠ Agent proposes plan first (I3)</span>
-                <span class="ex-b-item warn">⚠ Review before implementation</span>
-              </div>
-            </div>
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C2 I3 R2 K2</span>
+            <span class="ex-score mono">→ 9</span>
+            <span class="badge medium">Medium</span>
+          </div>
+          <p class="ex-task">Dashboard layout revision</p>
+          <div class="ex-reasoning">
+            <span class="ex-r-item"><span class="mono ex-r-dim accent">C2</span> touches multiple components</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I3</span> UX refinement requires iteration</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R2</span> functional review, not architectural</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K2</span> changes existing behavior</span>
+          </div>
+          <div class="ex-behavior">
+            <span class="ex-b-item warn">⚠ Draft-first required (I3)</span>
+            <span class="ex-b-item warn">⚠ Human review before merge</span>
+          </div>
+        </div>
 
-            <div class="example-item">
-              <div class="ex-header">
-                <span class="ex-vector mono">C3 I2 R3 K3</span>
-                <span class="ex-score mono">→ 11</span>
-                <span class="badge complex">Complex</span>
-              </div>
-              <p class="ex-task">Change identity propagation across services</p>
-              <div class="ex-reasoning">
-                <span class="ex-r-item"><span class="mono ex-r-dim accent">C3</span> cross-service identity understanding required</span>
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C2 I3 R2 K2</span>
+            <span class="ex-score mono">→ 9</span>
+            <span class="badge medium">Medium</span>
+          </div>
+          <p class="ex-task">Refactor repository layer for shared patterns</p>
+          <div class="ex-reasoning">
+            <span class="ex-r-item"><span class="mono ex-r-dim accent">C2</span> shared patterns across modules</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I3</span> exploratory, convergence uncertain</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R2</span> review before full implementation</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K2</span> changes existing behavior</span>
+          </div>
+          <div class="ex-behavior">
+            <span class="ex-b-item warn">⚠ Agent proposes plan first (I3)</span>
+            <span class="ex-b-item warn">⚠ Review before implementation</span>
+          </div>
+        </div>
+
+        <!-- ROW 3 — Complex -->
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C2 I2 R3 K3</span>
+            <span class="ex-score mono">→ 10</span>
+            <span class="badge complex">Complex</span>
+          </div>
+          <p class="ex-task">Billing webhook change</p>
+          <div class="ex-reasoning">
+            <span class="ex-r-item"><span class="mono ex-r-dim accent">C2</span> touches business-critical logic</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I2</span> correctness may require several cycles</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R3</span> review is mandatory</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K3</span> bad rollout can create financial issues</span>
+          </div>
+          <div class="ex-behavior">
+            <span class="ex-b-item block">✕ Supervised execution</span>
+            <span class="ex-b-item block">✕ Approval per step</span>
+            <span class="ex-b-item block">✕ Deploy runbook required</span>
+          </div>
+        </div>
+
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C3 I3 R3 K2</span>
+            <span class="ex-score mono">→ 11</span>
+            <span class="badge complex">Complex</span>
+          </div>
+          <p class="ex-task">Auth UI redesign (login + recovery flows)</p>
+          <div class="ex-reasoning">
+            <span class="ex-r-item"><span class="mono ex-r-dim accent">C3</span> cross-flow understanding required</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I3</span> multiple design and functional iterations</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R3</span> UX + correctness review required</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K2</span> changes a critical entry point</span>
+          </div>
+          <div class="ex-behavior">
+            <span class="ex-b-item block">✕ Supervised execution</span>
+            <span class="ex-b-item block">✕ Approval per step</span>
+            <span class="ex-b-item block">✕ Architect sign-off required</span>
+          </div>
+        </div>
+
+        <div class="example-item">
+          <div class="ex-header">
+            <span class="ex-vector mono">C3 I2 R3 K3</span>
+            <span class="ex-score mono">→ 11</span>
+            <span class="badge complex">Complex</span>
+          </div>
+          <p class="ex-task">Change identity propagation across services</p>
+          <div class="ex-reasoning">
+            <span class="ex-r-item"><span class="mono ex-r-dim accent">C3</span> cross-service identity understanding required</span>
                 <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I2</span> multiple verification cycles expected</span>
                 <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R3</span> mandatory human review</span>
                 <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K3</span> rollout must be controlled and staged</span>
@@ -471,10 +465,8 @@ import Layout from '../layouts/Layout.astro';
                 <span class="ex-b-item block">✕ Coordinated rollout required</span>
                 <span class="ex-b-item block">✕ Deploy runbook mandatory</span>
               </div>
-            </div>
-
-          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -785,11 +777,10 @@ import Layout from '../layouts/Layout.astro';
   .rule-row span:last-child { font-size: 13px; color: var(--text-muted); }
 
   /* ── Examples ── */
-  .examples-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .ex-domain-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; display: block; }
-  .examples-list { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-  .example-item { padding: 20px 22px; background: var(--bg-card); border-bottom: 1px solid var(--border); }
-  .example-item:last-child { border-bottom: none; }
+  .ex-headers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 4px; }
+  .ex-domain-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 4px; display: block; }
+  .examples-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
+  .example-item { padding: 20px 22px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); display: flex; flex-direction: column; }
   .ex-header { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; flex-wrap: wrap; }
   .ex-vector { font-size: 13px; color: var(--text); font-weight: 500; }
   .ex-score  { font-size: 13px; color: var(--text-secondary); }
@@ -861,7 +852,8 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width: 1024px) {
     .dimensions-grid { grid-template-columns: repeat(2, 1fr); }
     .exec-grid { grid-template-columns: repeat(3, 1fr); }
-    .examples-tabs { grid-template-columns: 1fr; gap: 40px; }
+    .examples-grid { grid-template-columns: 1fr; }
+    .ex-headers { display: none; }
   }
   @media (max-width: 700px) {
     #why .container { text-align: left; }

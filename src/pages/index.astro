@@ -460,7 +460,8 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* ── Why ── */
-  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+  #why .container { text-align: right; }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; text-align: left; }
   .why-card {
     padding: 28px 24px; border-radius: var(--radius); border: 1px solid var(--border);
   }
@@ -555,13 +556,13 @@ import Layout from '../layouts/Layout.astro';
   .step p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
   /* ── Execution ── */
-  .exec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 48px; }
+  .exec-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 48px; }
   .exec-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
   .exec-card.blocked { border-color: rgba(139,92,246,0.3); }
   .exec-mode { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 6px; letter-spacing: 0.04em; }
   .exec-condition { font-size: 12px; color: var(--accent); margin-bottom: 12px; }
   .exec-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
-  .policy-rules { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; max-width: 480px; }
+  .policy-rules { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 0 auto; max-width: 480px; }
   .rule-row { display: flex; align-items: center; gap: 16px; padding: 14px 20px; background: var(--bg-card); border-bottom: 1px solid var(--border); }
   .rule-row:last-child { border-bottom: none; }
   .rule-signal { color: var(--amber); font-size: 13px; min-width: 28px; }
@@ -600,9 +601,15 @@ import Layout from '../layouts/Layout.astro';
   .footer-meta a:hover { color: var(--text); }
 
   /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .exec-grid { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 700px) {
     .why-grid { grid-template-columns: 1fr; }
+    #why .container { text-align: left; }
+    .exec-grid { grid-template-columns: 1fr; }
     .nav-links { gap: 16px; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
+    .story-contrast, .model-consequence { max-width: 100%; }
   }
 </style>

@@ -29,13 +29,17 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="CIRK" />
+    <meta property="og:image" content="https://cirk.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://cirk.dev/og-image.png" />
 
-    <!-- JSON-LD -->
+    <!-- JSON-LD: WebSite -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -43,6 +47,64 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         "name": "CIRK",
         "url": "https://cirk.dev",
         "description": "Open standard for governing AI task execution."
+      }
+    </script>
+
+    <!-- JSON-LD: FAQPage (drives Google rich snippets) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is CIRK a replacement for story points?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, in AI-assisted development contexts where execution governance matters more than effort estimation. Story points estimate human effort. CIRK estimates execution conditions for AI-native workflows."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does CIRK estimate time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not directly. CIRK is about execution complexity, review intensity, and rollout risk. Teams may later derive time insights from calibration data, but duration is not the primary output."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why doesn't CIRK include a time dimension?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Time obscures the real constraint. CIRK makes it explicit. Duration is a byproduct of complexity, iteration depth, review burden, and rollout sensitivity — not an independent variable. Teams can derive execution windows from the vector: high R means longer review cycles, high K means wider rollout windows, high I means more iteration rounds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can CIRK be used without coding agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Even when humans perform the implementation, CIRK still helps classify review burden, context depth, and deployment sensitivity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why not keep story points and add AI rules separately?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because effort is no longer the most important variable for AI-assisted execution. CIRK makes the real constraints explicit instead of treating them as side rules layered on top of an effort model."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is CIRK a product?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. CIRK is a standard and a shared execution language. Products and platforms may implement it, but the model itself is implementation-agnostic and MIT licensed."
+            }
+          }
+        ]
       }
     </script>
 

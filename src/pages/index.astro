@@ -19,17 +19,43 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
+    <div class="container hero-container">
       <div class="hero-status mono">
         <span class="hero-status-dot"></span>
         YOU HAVE 0 OPEN COMPLIANCE EVENTS
       </div>
+
       <h1>CIRK — Execution Model<br />for AI-Native Development.</h1>
       <p class="hero-clarify">Replace story points with Context, Iteration, Review, and Risk.</p>
+
+      <!-- Model summary -->
+      <div class="hero-model">
+        <div class="hero-dim"><span class="hero-dim-letter accent mono">C</span><span class="hero-dim-name">Context</span><span class="hero-dim-desc">how much understanding the agent needs</span></div>
+        <div class="hero-dim"><span class="hero-dim-letter mono" style="color:var(--green)">I</span><span class="hero-dim-name">Iteration</span><span class="hero-dim-desc">how many cycles are likely to converge</span></div>
+        <div class="hero-dim"><span class="hero-dim-letter mono" style="color:var(--amber)">R</span><span class="hero-dim-name">Review</span><span class="hero-dim-desc">how much human validation is required</span></div>
+        <div class="hero-dim"><span class="hero-dim-letter mono" style="color:var(--purple)">K</span><span class="hero-dim-name">Risk</span><span class="hero-dim-desc">how risky or sensitive deployment is</span></div>
+      </div>
+
+      <!-- Live example -->
+      <div class="hero-example mono">
+        <p class="hero-ex-task">Task: fix bug in payment calculation</p>
+        <p class="hero-ex-vector">
+          <span class="accent">C: 3</span>
+          <span class="hero-ex-sep">|</span>
+          <span style="color:var(--green)">I: 2</span>
+          <span class="hero-ex-sep">|</span>
+          <span style="color:var(--amber)">R: 3</span>
+          <span class="hero-ex-sep">|</span>
+          <span style="color:var(--purple)">K: 3</span>
+        </p>
+        <p class="hero-ex-result">→ requires human review + controlled deployment</p>
+      </div>
+
+      <!-- Tagline + CTA -->
+      <p class="hero-tagline">AI writes the code. CIRK governs the execution.</p>
       <div class="hero-cta">
         <a href="#model" class="btn-primary">Read the spec</a>
-        <a href="#examples" class="btn-ghost">View examples</a>
-        <a href="https://github.com/core-618/cirk" class="btn-ghost" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/core-618/cirk" class="btn-ghost" target="_blank" rel="noopener">GitHub →</a>
       </div>
     </div>
   </section>
@@ -653,7 +679,32 @@ import Layout from '../layouts/Layout.astro';
   }
   .hero-clarify {
     font-size: clamp(1rem, 2vw, 1.25rem); color: var(--text-muted);
-    font-weight: 400; margin-bottom: 36px; line-height: 1.5;
+    font-weight: 400; margin-bottom: 40px; line-height: 1.5;
+  }
+  /* Hero model summary */
+  .hero-model {
+    display: flex; flex-direction: column; gap: 10px;
+    margin-bottom: 32px; max-width: 560px;
+  }
+  .hero-dim { display: flex; align-items: baseline; gap: 12px; }
+  .hero-dim-letter { font-size: 15px; font-weight: 700; min-width: 16px; }
+  .hero-dim-name { font-size: 14px; font-weight: 500; color: var(--text); min-width: 72px; }
+  .hero-dim-desc { font-size: 13px; color: var(--text-muted); }
+  /* Hero example */
+  .hero-example {
+    display: inline-flex; flex-direction: column; gap: 8px;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px 24px;
+    margin-bottom: 32px; font-size: 13px;
+  }
+  .hero-ex-task { color: var(--text-secondary); margin-bottom: 4px; }
+  .hero-ex-vector { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; flex-wrap: wrap; }
+  .hero-ex-sep { color: var(--border); }
+  .hero-ex-result { color: var(--text-muted); margin-top: 4px; }
+  /* Tagline */
+  .hero-tagline {
+    font-size: 15px; color: var(--text-secondary); font-style: italic;
+    margin-bottom: 28px; font-weight: 400;
   }
   .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn-primary {

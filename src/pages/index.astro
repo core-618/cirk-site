@@ -25,15 +25,15 @@ import Layout from '../layouts/Layout.astro';
         YOU HAVE 0 OPEN COMPLIANCE EVENTS
       </div>
 
-      <h1>CIRK — Execution Model<br />for AI-Native Development.</h1>
-      <p class="hero-clarify">Replace story points with Context, Iteration, Review, and Risk.</p>
+      <h1>Stop estimating.<br />Start controlling AI execution.</h1>
+      <p class="hero-clarify">CIRK replaces story points with a model that defines how AI should execute, review, and deploy work.</p>
 
       <!-- Model summary -->
       <div class="hero-model">
-        <div class="hero-dim"><span class="hero-dim-letter accent mono">C</span><span class="hero-dim-name">Context</span><span class="hero-dim-desc">how much understanding the agent needs</span></div>
-        <div class="hero-dim"><span class="hero-dim-letter mono" style="color:var(--green)">I</span><span class="hero-dim-name">Iteration</span><span class="hero-dim-desc">how many cycles are likely to converge</span></div>
-        <div class="hero-dim"><span class="hero-dim-letter mono" style="color:var(--amber)">R</span><span class="hero-dim-name">Review</span><span class="hero-dim-desc">how much human validation is required</span></div>
-        <div class="hero-dim"><span class="hero-dim-letter mono" style="color:var(--purple)">K</span><span class="hero-dim-name">Risk</span><span class="hero-dim-desc">how risky or sensitive deployment is</span></div>
+        <div class="hero-dim"><span class="hero-dim-letter accent mono">C</span><span class="hero-dim-name">Context</span><span class="hero-dim-desc">How much context does the AI need?</span></div>
+        <div class="hero-dim"><span class="hero-dim-letter mono" style="color:var(--green)">I</span><span class="hero-dim-name">Iteration</span><span class="hero-dim-desc">How many iterations until it works?</span></div>
+        <div class="hero-dim"><span class="hero-dim-letter mono" style="color:var(--amber)">R</span><span class="hero-dim-name">Review</span><span class="hero-dim-desc">How much human review is required?</span></div>
+        <div class="hero-dim"><span class="hero-dim-letter mono" style="color:var(--purple)">K</span><span class="hero-dim-name">Risk</span><span class="hero-dim-desc">How dangerous is deploying this?</span></div>
       </div>
 
       <!-- Live example -->
@@ -60,6 +60,23 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- QUICK EXPLANATION -->
+  <section class="section contrast-section">
+    <div class="container narrow center">
+      <div class="contrast-block">
+        <div class="contrast-item">
+          <p class="contrast-label mono">Story points ask</p>
+          <p class="contrast-question">"How long will this take?"</p>
+        </div>
+        <div class="contrast-divider"></div>
+        <div class="contrast-item">
+          <p class="contrast-label mono accent">CIRK asks</p>
+          <p class="contrast-question accent">"How should this run?"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- THE SHIFT -->
   <section class="section alt-section" id="why">
     <div class="container">
@@ -73,7 +90,8 @@ import Layout from '../layouts/Layout.astro';
         <li>how risky rollout will be</li>
       </ul>
       <p class="shift-close">CIRK models that reality.</p>
-      <p class="shift-close" style="margin-top: 8px; color: var(--text-secondary); font-size: 15px;">Time is a side effect of the vector — not a dimension of it.</p>
+      <p class="shift-close" style="margin-top: 8px; color: var(--text-secondary); font-size: 15px;">Story points governed human delivery for 20 years. CIRK is designed to govern AI delivery.</p>
+      <p class="shift-close" style="margin-top: 4px; color: var(--text-secondary); font-size: 14px;">Time is a side effect of the vector — not a dimension of it.</p>
     </div>
   </section>
 
@@ -90,7 +108,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="dim-card">
           <div class="dim-letter accent">C</div>
           <h3>Context</h3>
-          <p>How much system understanding is required for correct execution?</p>
+          <p>How much context does the AI need?</p>
           <table>
             <tr><td class="score mono">C1</td><td>Isolated logic, local change, minimal context</td></tr>
             <tr><td class="score mono">C2</td><td>Multiple components, shared patterns, moderate system understanding</td></tr>
@@ -100,7 +118,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="dim-card">
           <div class="dim-letter" style="color: var(--green)">I</div>
           <h3>Iteration</h3>
-          <p>How many cycles are likely required before the solution converges?</p>
+          <p>How many iterations until it works?</p>
           <table>
             <tr><td class="score mono">I1</td><td>Deterministic or near one-pass execution</td></tr>
             <tr><td class="score mono">I2</td><td>Some iteration expected, usually 2–3 cycles</td></tr>
@@ -110,7 +128,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="dim-card">
           <div class="dim-letter" style="color: var(--amber)">R</div>
           <h3>Review</h3>
-          <p>How much human validation is required before the work is trusted?</p>
+          <p>How much human review is required?</p>
           <table>
             <tr><td class="score mono">R1</td><td>Quick validation or spot-check</td></tr>
             <tr><td class="score mono">R2</td><td>Rule-level or functional review required</td></tr>
@@ -120,7 +138,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="dim-card">
           <div class="dim-letter" style="color: var(--purple)">K</div>
           <h3>Integration Risk</h3>
-          <p>How risky is integration, release, or rollout?</p>
+          <p>How dangerous is deploying this?</p>
           <table>
             <tr><td class="score mono">K1</td><td>Safe, additive, low-risk rollout</td></tr>
             <tr><td class="score mono">K2</td><td>Existing behavior changes, moderate release caution</td></tr>
@@ -299,6 +317,41 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- QUICK START -->
+  <section class="section" id="quick-start">
+    <div class="container narrow center">
+      <p class="label mono">Quick start</p>
+      <h2>How to start using CIRK.</h2>
+      <div class="qs-steps">
+        <div class="qs-step">
+          <span class="qs-num mono">1</span>
+          <div>
+            <p class="qs-title">Pick a task</p>
+            <p class="qs-desc">Any task your team or agent is about to execute.</p>
+          </div>
+        </div>
+        <div class="qs-step">
+          <span class="qs-num mono">2</span>
+          <div>
+            <p class="qs-title">Score it</p>
+            <p class="qs-desc"><span class="mono">C(1-3) I(1-3) R(1-3) K(1-3)</span></p>
+          </div>
+        </div>
+        <div class="qs-step">
+          <span class="qs-num mono">3</span>
+          <div>
+            <p class="qs-title">Apply the policy</p>
+            <div class="qs-policies">
+              <span class="qs-policy"><span class="mono qs-range" style="color:var(--green)">≤ 5</span> automate</span>
+              <span class="qs-policy"><span class="mono qs-range" style="color:var(--amber)">6–8</span> require review</span>
+              <span class="qs-policy"><span class="mono qs-range" style="color:var(--error, #ff6b6b)">9+</span> control execution</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- EXAMPLES -->
   <section class="section alt-section" id="examples">
     <div class="container">
@@ -323,12 +376,12 @@ import Layout from '../layouts/Layout.astro';
             <span class="ex-score mono">→ 4</span>
             <span class="badge trivial">Trivial</span>
           </div>
-          <p class="ex-task">Add read-only status endpoint</p>
+          <p class="ex-task">Fix null check in cart total</p>
           <div class="ex-reasoning">
-            <span class="ex-r-item"><span class="mono ex-r-dim accent">C1</span> local, isolated change</span>
-            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I1</span> deterministic implementation</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim accent">C1</span> single function, local fix</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I1</span> deterministic fix</span>
             <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R1</span> low review burden</span>
-            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K1</span> low rollout risk</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K1</span> safe, additive fix</span>
           </div>
           <div class="ex-behavior">
             <span class="ex-b-item ok">✓ Autonomous execution</span>
@@ -480,18 +533,18 @@ import Layout from '../layouts/Layout.astro';
             <span class="ex-score mono">→ 11</span>
             <span class="badge complex">Complex</span>
           </div>
-          <p class="ex-task">Change identity propagation across services</p>
+          <p class="ex-task">Migrate payment gateway provider</p>
           <div class="ex-reasoning">
-            <span class="ex-r-item"><span class="mono ex-r-dim accent">C3</span> cross-service identity understanding required</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I2</span> multiple verification cycles expected</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R3</span> mandatory human review</span>
-                <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K3</span> rollout must be controlled and staged</span>
-              </div>
-              <div class="ex-behavior">
-                <span class="ex-b-item block">✕ Supervised execution</span>
-                <span class="ex-b-item block">✕ Coordinated rollout required</span>
-                <span class="ex-b-item block">✕ Deploy runbook mandatory</span>
-              </div>
+            <span class="ex-r-item"><span class="mono ex-r-dim accent">C3</span> cross-system payment flow understanding</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--green)">I2</span> multiple verification cycles expected</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--amber)">R3</span> mandatory human review</span>
+            <span class="ex-r-item"><span class="mono ex-r-dim" style="color:var(--purple)">K3</span> rollout must be staged and monitored</span>
+          </div>
+          <div class="ex-behavior">
+            <span class="ex-b-item block">✕ Supervised execution</span>
+            <span class="ex-b-item block">✕ Staged rollout required</span>
+            <span class="ex-b-item block">✕ Deploy runbook mandatory</span>
+          </div>
         </div>
 
       </div>
@@ -606,11 +659,31 @@ import Layout from '../layouts/Layout.astro';
 
         <details class="faq-item">
           <summary>
-            <span>Is CIRK a product?</span>
+            <span>Is CIRK a framework or a standard?</span>
             <span class="faq-icon mono">+</span>
           </summary>
           <div class="faq-body">
-            <p>No. CIRK is a standard and a shared execution language. Products and platforms may implement it, but the model itself is implementation-agnostic and MIT licensed.</p>
+            <p>CIRK is a standard — not a framework, not a tool. It defines a shared language for execution governance. Any team, tool, or platform can implement it. MIT licensed.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>How do I start using CIRK?</span>
+            <span class="faq-icon mono">+</span>
+          </summary>
+          <div class="faq-body">
+            <p>Pick a task. Score it across C, I, R, K (1–3 each). Sum the vector. Apply the policy: <span class="mono faq-code">≤5</span> automate, <span class="mono faq-code">6–8</span> require review, <span class="mono faq-code">9+</span> control execution. That's it.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>Does CIRK work with Scrum?</span>
+            <span class="faq-icon mono">+</span>
+          </summary>
+          <div class="faq-body">
+            <p>Yes. CIRK replaces the estimation layer (story points), not the process. Sprints, standups, and backlogs stay the same. The difference is that each task carries an execution policy instead of an effort guess.</p>
           </div>
         </details>
 
@@ -758,6 +831,15 @@ import Layout from '../layouts/Layout.astro';
   .shift-list li { font-size: 15px; color: var(--text); }
   .shift-close { font-size: 1.125rem; font-weight: 500; color: var(--accent); }
 
+  /* ── Contrast (Quick Explanation) ── */
+  .contrast-section { padding: 48px 0; }
+  .contrast-block { display: flex; align-items: center; justify-content: center; gap: 48px; }
+  .contrast-item { flex: 1; max-width: 320px; }
+  .contrast-label { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 8px; }
+  .contrast-question { font-size: 1.5rem; font-weight: 500; color: var(--text-muted); line-height: 1.3; }
+  .contrast-question.accent { color: var(--accent); }
+  .contrast-divider { width: 1px; height: 64px; background: var(--border); flex-shrink: 0; }
+
   /* ── Model ── */
   .model-formula { font-size: clamp(1.25rem, 3vw, 2rem); color: var(--text-secondary); margin: 40px 0 48px; letter-spacing: 0.06em; }
   .dimensions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
@@ -839,6 +921,16 @@ import Layout from '../layouts/Layout.astro';
   .rule-row:last-child { border-bottom: none; }
   .rule-signal { color: var(--amber); font-size: 13px; min-width: 28px; }
   .rule-row span:last-child { font-size: 13px; color: var(--text-muted); }
+
+  /* ── Quick Start ── */
+  .qs-steps { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; max-width: 480px; margin-left: auto; margin-right: auto; text-align: left; }
+  .qs-step { display: flex; gap: 20px; align-items: flex-start; }
+  .qs-num { font-size: 20px; font-weight: 600; color: var(--accent); min-width: 28px; line-height: 1.4; }
+  .qs-title { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+  .qs-desc { font-size: 14px; color: var(--text-muted); }
+  .qs-policies { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+  .qs-policy { font-size: 14px; color: var(--text-muted); }
+  .qs-range { font-weight: 500; margin-right: 8px; }
 
   /* ── Examples ── */
   .ex-headers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 4px; }
@@ -927,6 +1019,8 @@ import Layout from '../layouts/Layout.astro';
     .not-cirk-grid { grid-template-columns: 1fr; }
     .thumb-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
+    .contrast-block { flex-direction: column; gap: 24px; }
+    .contrast-divider { width: 64px; height: 1px; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
     .hero { padding: 72px 0 64px; }
     .section { padding: 64px 0; }

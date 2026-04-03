@@ -98,10 +98,26 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
           },
           {
             "@type": "Question",
-            "name": "Is CIRK a product?",
+            "name": "Is CIRK a framework or a standard?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. CIRK is a standard and a shared execution language. Products and platforms may implement it, but the model itself is implementation-agnostic and MIT licensed."
+              "text": "CIRK is a standard — not a framework, not a tool. It defines a shared language for execution governance. Any team, tool, or platform can implement it. MIT licensed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I start using CIRK?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pick a task. Score it across C, I, R, K (1-3 each). Sum the vector. Apply the policy: 5 or less automate, 6-8 require review, 9+ control execution."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does CIRK work with Scrum?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. CIRK replaces the estimation layer (story points), not the process. Sprints, standups, and backlogs stay the same. The difference is that each task carries an execution policy instead of an effort guess."
             }
           }
         ]

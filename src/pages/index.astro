@@ -73,7 +73,21 @@ import Layout from '../layouts/Layout.astro';
       <h2>Four dimensions. One execution policy.</h2>
       <p class="section-sub">Each task is scored from 1 to 3 across four dimensions. The vector defines how it runs.</p>
 
-      <div class="model-formula mono">[ C · I · R · K ]</div>
+      <div class="model-formula mono">[ C, I, R, K ] → Execution Decision</div>
+
+      <div class="story-contrast">
+        <p><span class="contrast-old">Story points estimate effort.</span> <span class="contrast-new">CIRK classifies execution.</span></p>
+        <p class="contrast-sub">That difference changes how software is built.</p>
+      </div>
+
+      <div class="model-consequence">
+        <p class="model-consequence-title">CIRK is not just a way to describe tasks. It determines how work is executed:</p>
+        <ul>
+          <li>Whether an agent can act autonomously</li>
+          <li>Whether human approval is required</li>
+          <li>Whether deployment needs coordination</li>
+        </ul>
+      </div>
 
       <div class="dimensions-grid">
         <div class="dim-card">
@@ -153,6 +167,17 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <p class="score-note-footer">The vector matters more than the score. Two tasks with the same total may require completely different execution policies.</p>
       </div>
+
+      <div class="inline-example">
+        <p class="label mono">Example</p>
+        <div class="inline-ex-vector mono">C2 I2 R3 K1 <span class="inline-ex-score">→ Score 8</span></div>
+        <div class="inline-ex-rules">
+          <span class="ex-b-item warn">⚠ Human review required</span>
+          <span class="ex-b-item warn">⚠ No auto-merge</span>
+          <span class="ex-b-item warn">⚠ Draft-first execution</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -479,6 +504,47 @@ import Layout from '../layouts/Layout.astro';
   .badge.medium  { background: var(--amber-dim);  color: var(--amber);   border: 1px solid rgba(245,158,11,0.2); }
   .badge.complex { background: rgba(239,68,68,0.1); color: #ef4444;      border: 1px solid rgba(239,68,68,0.2); }
   .badge.split   { background: rgba(139,92,246,0.1); color: var(--purple); border: 1px solid rgba(139,92,246,0.2); }
+
+  /* ── Story contrast ── */
+  .story-contrast {
+    margin: 0 0 32px;
+    padding: 20px 24px;
+    background: var(--bg-container);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    max-width: 600px;
+  }
+  .story-contrast p:first-child { font-size: 1.125rem; font-weight: 500; line-height: 1.4; }
+  .contrast-old { color: var(--text-secondary); text-decoration: line-through; text-decoration-color: var(--border-hover); }
+  .contrast-new { color: var(--accent); }
+  .contrast-sub { font-size: 14px; color: var(--text-muted); margin-top: 8px; }
+
+  /* ── Model consequence ── */
+  .model-consequence {
+    margin: 0 0 48px;
+    padding: 20px 24px;
+    border-left: 2px solid var(--accent);
+    background: var(--accent-dim);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    max-width: 600px;
+  }
+  .model-consequence-title { font-size: 14px; color: var(--text); margin-bottom: 12px; line-height: 1.5; }
+  .model-consequence ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .model-consequence li { font-size: 14px; color: var(--text-muted); padding-left: 16px; position: relative; }
+  .model-consequence li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+  /* ── Inline example ── */
+  .inline-example {
+    margin-top: 40px;
+    padding: 24px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    max-width: 480px;
+  }
+  .inline-ex-vector { font-size: 1.125rem; font-weight: 500; color: var(--text); margin-bottom: 16px; }
+  .inline-ex-score { color: var(--text-secondary); font-weight: 400; }
+  .inline-ex-rules { display: flex; flex-wrap: wrap; gap: 8px; }
 
   /* ── Steps ── */
   .steps { display: flex; flex-direction: column; gap: 0; margin-top: 40px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }

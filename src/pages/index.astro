@@ -20,49 +20,33 @@ import Layout from '../layouts/Layout.astro';
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-badge mono">Open Standard · MIT</div>
-      <h1>
-        AI writes the code.<br />
-        <span class="accent">CIRK governs the execution.</span>
-      </h1>
-      <p class="hero-clarify">Replace story points with an AI-native execution model.</p>
-      <p class="hero-sub">
-        Story points measure human effort. That era is over.<br />
-        CIRK classifies how AI tasks should be executed — who reviews, when agents act, how deployments happen.
-      </p>
+      <div class="hero-status mono">
+        <span class="hero-status-dot"></span>
+        YOU HAVE 0 OPEN COMPLIANCE EVENTS
+      </div>
+      <h1>CIRK — Execution Model<br />for AI-Native Development.</h1>
+      <p class="hero-clarify">Replace story points with Context, Iteration, Review, and Risk.</p>
       <div class="hero-cta">
-        <a href="#model" class="btn-primary">Read the standard</a>
-        <a href="https://github.com/core-618/cirk" class="btn-ghost" target="_blank" rel="noopener">View on GitHub</a>
+        <a href="#model" class="btn-primary">Read the spec</a>
+        <a href="#examples" class="btn-ghost">View examples</a>
+        <a href="https://github.com/core-618/cirk" class="btn-ghost" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </section>
 
-  <!-- WHY THIS MATTERS -->
+  <!-- THE SHIFT -->
   <section class="section alt-section" id="why">
     <div class="container narrow">
-      <p class="label mono">Why this matters</p>
-      <h2>Estimation built for AI, not humans.</h2>
-
-      <div class="why-grid">
-        <div class="why-card without">
-          <p class="why-label mono">Without CIRK</p>
-          <ul>
-            <li>Random autonomy — agents decide when to act</li>
-            <li>Inconsistent review — no standard for when humans intervene</li>
-            <li>Unsafe deploys — integration risk is implicit</li>
-            <li>Broken planning — story points don't reflect AI execution</li>
-          </ul>
-        </div>
-        <div class="why-card with">
-          <p class="why-label mono">With CIRK</p>
-          <ul>
-            <li>Predictable execution — every task has an execution policy</li>
-            <li>Controlled autonomy — agents act within defined boundaries</li>
-            <li>Explicit governance — review and deploy rules are declared</li>
-            <li>Safe by default — high-risk tasks require human approval</li>
-          </ul>
-        </div>
-      </div>
+      <p class="label mono">The shift</p>
+      <h2>Story points were built to estimate human effort.</h2>
+      <p class="shift-sub">But AI changed the bottleneck. What matters now is not just how long work takes. It is:</p>
+      <ul class="shift-list">
+        <li>how much context an agent needs</li>
+        <li>how many iterations are likely</li>
+        <li>how much human review is required</li>
+        <li>how risky rollout will be</li>
+      </ul>
+      <p class="shift-close">CIRK models that reality.</p>
     </div>
   </section>
 
@@ -74,20 +58,6 @@ import Layout from '../layouts/Layout.astro';
       <p class="section-sub">Each task is scored from 1 to 3 across four dimensions. The vector defines how it runs.</p>
 
       <div class="model-formula mono">[ C, I, R, K ] → Execution Decision</div>
-
-      <div class="story-contrast">
-        <p><span class="contrast-old">Story points estimate effort.</span> <span class="contrast-new">CIRK classifies execution.</span></p>
-        <p class="contrast-sub">That difference changes how software is built.</p>
-      </div>
-
-      <div class="model-consequence">
-        <p class="model-consequence-title">CIRK is not just a way to describe tasks. It determines how work is executed:</p>
-        <ul>
-          <li>Whether an agent can act autonomously</li>
-          <li>Whether human approval is required</li>
-          <li>Whether deployment needs coordination</li>
-        </ul>
-      </div>
 
       <div class="dimensions-grid">
         <div class="dim-card">
@@ -169,12 +139,12 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="inline-example">
-        <p class="label mono">Example</p>
+        <p class="label mono">Example — Login API</p>
         <div class="inline-ex-vector mono">C2 I2 R3 K1 <span class="inline-ex-score">→ Score 8</span></div>
         <div class="inline-ex-rules">
-          <span class="ex-b-item warn">⚠ Human review required</span>
-          <span class="ex-b-item warn">⚠ No auto-merge</span>
-          <span class="ex-b-item warn">⚠ Draft-first execution</span>
+          <span class="ex-b-item ok">✓ Agent can prepare implementation</span>
+          <span class="ex-b-item warn">⚠ Human review is mandatory</span>
+          <span class="ex-b-item warn">⚠ Auto-merge is disabled</span>
         </div>
       </div>
 
@@ -342,21 +312,22 @@ import Layout from '../layouts/Layout.astro';
   <!-- OPEN STANDARD -->
   <section class="section">
     <div class="container narrow center">
-      <p class="label mono">Open by design</p>
-      <h2>Not tied to any tool, platform, or vendor.</h2>
+      <p class="label mono">Open standard</p>
+      <h2>CIRK is not a product.</h2>
       <p class="section-sub">
-        CIRK is a standard. It works with any system that classifies and executes tasks.
+        It is an open standard for execution governance in AI-native software development.
+      </p>
+      <p class="open-body">
+        It can be adopted in issue trackers, coding agents, pull request workflows,
+        internal platforms, or governance layers such as
+        <a href="https://orbit618.com" target="_blank" rel="noopener">Orbit618</a>.
       </p>
       <div class="open-grid">
-        <div class="open-card">Task trackers</div>
+        <div class="open-card">Issue trackers</div>
         <div class="open-card">AI coding agents</div>
-        <div class="open-card">Orchestration pipelines</div>
-        <div class="open-card">Developer tools</div>
+        <div class="open-card">PR workflows</div>
+        <div class="open-card">Internal platforms</div>
       </div>
-      <p class="orbit-note">
-        <a href="https://orbit618.com" target="_blank" rel="noopener">Orbit618</a> is one implementation environment where CIRK governs AI execution.
-        It is not required to adopt CIRK.
-      </p>
     </div>
   </section>
 
@@ -366,11 +337,19 @@ import Layout from '../layouts/Layout.astro';
       <h2>Start using CIRK today.</h2>
       <p class="section-sub">MIT licensed. No dependencies. Works with anything.</p>
       <div class="hero-cta">
-        <a href="https://github.com/core-618/cirk" class="btn-primary" target="_blank" rel="noopener">View on GitHub →</a>
-        <a href="mailto:hello@core618.com" class="btn-ghost">Contact</a>
+        <a href="https://github.com/core-618/cirk" class="btn-primary" target="_blank" rel="noopener">Read the spec →</a>
+        <a href="#examples" class="btn-ghost">View quick examples</a>
+        <a href="https://github.com/core-618/cirk" class="btn-ghost" target="_blank" rel="noopener">Open GitHub</a>
       </div>
     </div>
   </section>
+
+  <!-- FOOTER TAGLINE -->
+  <div class="footer-tagline">
+    <div class="container">
+      <span class="mono">AI writes the code. CIRK governs the execution.</span>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -408,25 +387,28 @@ import Layout from '../layouts/Layout.astro';
 
   /* ── Hero ── */
   .hero { padding: 120px 0 96px; }
-  .hero-badge {
-    display: inline-block; font-size: 11px; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--accent);
-    background: var(--accent-dim); border: 1px solid var(--accent-border);
-    border-radius: 20px; padding: 4px 12px; margin-bottom: 28px;
+  .hero-status {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--green); background: var(--green-dim);
+    border: 1px solid rgba(16,185,129,0.25);
+    border-radius: 20px; padding: 5px 14px; margin-bottom: 32px;
+  }
+  .hero-status-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--green); flex-shrink: 0;
+    box-shadow: 0 0 6px var(--green);
   }
   .hero h1 {
     font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 500;
     line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px; color: var(--text);
   }
   .hero-clarify {
-    font-size: clamp(1.1rem, 2vw, 1.375rem);
+    font-size: clamp(1rem, 2vw, 1.25rem);
     color: var(--text-muted);
     font-weight: 400;
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-  .hero-sub {
-    font-size: 1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 40px;
+    margin-bottom: 36px;
+    line-height: 1.5;
   }
   .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn-primary {
@@ -459,21 +441,16 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 48px; line-height: 1.7;
   }
 
-  /* ── Why ── */
+  /* ── Shift ── */
   #why .container { text-align: right; }
-  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; text-align: left; }
-  .why-card {
-    padding: 28px 24px; border-radius: var(--radius); border: 1px solid var(--border);
+  .shift-sub { font-size: 1rem; color: var(--text-muted); margin: 16px 0 20px; line-height: 1.7; text-align: right; }
+  .shift-list {
+    list-style: none; display: flex; flex-direction: column; gap: 10px;
+    margin-bottom: 28px; text-align: right;
   }
-  .why-card.without { background: var(--bg-card); }
-  .why-card.with { background: var(--accent-dim); border-color: var(--accent-border); }
-  .why-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; display: block; }
-  .why-card.with .why-label { color: var(--accent); }
-  .why-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .why-card li { font-size: 14px; color: var(--text-muted); line-height: 1.5; padding-left: 12px; position: relative; }
-  .why-card li::before { content: '—'; position: absolute; left: 0; color: var(--border-hover); }
-  .why-card.with li { color: var(--text); }
-  .why-card.with li::before { color: var(--accent); content: '✓'; }
+  .shift-list li { font-size: 15px; color: var(--text); }
+  .shift-list li::before { content: none; }
+  .shift-close { font-size: 1.125rem; font-weight: 500; color: var(--accent); text-align: right; }
 
   /* ── Model ── */
   .model-formula { font-size: clamp(1.5rem, 4vw, 2.5rem); color: var(--text-secondary); margin: 40px 0 48px; letter-spacing: 0.1em; }
@@ -585,7 +562,17 @@ import Layout from '../layouts/Layout.astro';
   /* ── Open standard ── */
   .open-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 32px 0; }
   .open-card { font-size: 13px; color: var(--text-muted); background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 16px; }
+  .open-body { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 28px; margin-top: -12px; }
   .orbit-note { font-size: 13px; color: var(--text-secondary); margin-top: 8px; line-height: 1.6; }
+
+  /* ── Footer tagline ── */
+  .footer-tagline {
+    background: var(--bg-container);
+    border-top: 1px solid var(--border);
+    padding: 20px 0;
+    text-align: center;
+  }
+  .footer-tagline span { font-size: 12px; color: var(--text-secondary); letter-spacing: 0.04em; }
 
   /* ── CTA ── */
   .cta-section h2 { margin-bottom: 8px; }
@@ -605,8 +592,8 @@ import Layout from '../layouts/Layout.astro';
     .exec-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 700px) {
-    .why-grid { grid-template-columns: 1fr; }
     #why .container { text-align: left; }
+    .shift-sub, .shift-list, .shift-close { text-align: left; }
     .exec-grid { grid-template-columns: 1fr; }
     .nav-links { gap: 16px; }
     .footer-inner { flex-direction: column; align-items: flex-start; }

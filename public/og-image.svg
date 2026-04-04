@@ -77,8 +77,8 @@
   <rect x="100" y="340" width="1000" height="1" fill="url(#accentLine)" opacity="0.4"/>
 
   <!-- Logo mark -->
-  <text x="100" y="230" font-family="'IBM Plex Mono', 'SF Mono', 'Menlo', monospace" font-size="96" font-weight="500" letter-spacing="-2">
-    <tspan fill="#2563EB">C</tspan><tspan fill="#ebebeb">IRK</tspan>
+  <text x="100" y="230" font-family="'IBM Plex Mono', 'SF Mono', 'Menlo', monospace" font-size="96" font-weight="500">
+    <tspan fill="#2563EB">C</tspan><tspan fill="#e0e0e0"> • </tspan><tspan fill="#10B981">I</tspan><tspan fill="#e0e0e0"> • </tspan><tspan fill="#F59E0B">R</tspan><tspan fill="#e0e0e0"> • </tspan><tspan fill="#8B5CF6">K</tspan>
   </text>
 
   <!-- Tagline -->
@@ -90,33 +90,35 @@
   <g transform="translate(100, 380)">
     <!-- C chip -->
     <rect x="0" y="0" width="110" height="44" rx="8" fill="#1c1c1c" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="20" y="29" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#6b6b6b">C</text>
+    <text x="20" y="29" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#2563EB">C</text>
     <text x="42" y="29" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#ebebeb">Context</text>
 
     <!-- I chip -->
     <rect x="130" y="0" width="120" height="44" rx="8" fill="#1c1c1c" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="150" y="29" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#6b6b6b">I</text>
+    <text x="150" y="29" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#10B981">I</text>
     <text x="170" y="29" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#ebebeb">Iteration</text>
 
     <!-- R chip -->
     <rect x="270" y="0" width="110" height="44" rx="8" fill="#1c1c1c" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="290" y="29" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#6b6b6b">R</text>
+    <text x="290" y="29" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#F59E0B">R</text>
     <text x="310" y="29" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#ebebeb">Review</text>
 
     <!-- K chip -->
     <rect x="400" y="0" width="160" height="44" rx="8" fill="#1c1c1c" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="420" y="29" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#6b6b6b">K</text>
+    <text x="420" y="29" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#8B5CF6">K</text>
     <text x="442" y="29" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#ebebeb">Integration</text>
   </g>
 
   <!-- Vector example -->
-  <rect x="100" y="460" width="260" height="40" rx="6" fill="rgba(37, 99, 235, 0.12)" stroke="rgba(37, 99, 235, 0.25)" stroke-width="1"/>
-  <text x="120" y="487" font-family="'IBM Plex Mono', monospace" font-size="17" fill="#2563EB" letter-spacing="2">C2  I3  R1  K2</text>
+  <rect x="100" y="460" width="280" height="40" rx="6" fill="rgba(37, 99, 235, 0.08)" stroke="rgba(42, 42, 42, 1)" stroke-width="1"/>
+  <text x="120" y="487" font-family="'IBM Plex Mono', monospace" font-size="17" letter-spacing="2">
+    <tspan fill="#2563EB">C2</tspan><tspan fill="#6b6b6b">  </tspan><tspan fill="#10B981">I3</tspan><tspan fill="#6b6b6b">  </tspan><tspan fill="#F59E0B">R1</tspan><tspan fill="#6b6b6b">  </tspan><tspan fill="#8B5CF6">K2</tspan>
+  </text>
 
   <!-- Domain -->
   <text x="1100" y="575" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#6b6b6b" text-anchor="end">cirk.dev</text>
 
   <!-- Open standard badge -->
   <rect x="100" y="555" width="130" height="30" rx="6" fill="rgba(16, 185, 129, 0.10)" stroke="rgba(16, 185, 129, 0.25)" stroke-width="1"/>
-  <text x="118" y="575" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#10B981">OPEN STANDARD</text>
+  <text x="118" y="575" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#10B981">PROPOSED v0.1</text>
 </svg>

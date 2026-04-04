@@ -12,6 +12,7 @@ import Layout from '../layouts/Layout.astro';
         <a href="#execution">Execution</a>
         <a href="#examples">Examples</a>
         <a href="#faq">FAQ</a>
+        <a href="#open-questions">Open Questions</a>
         <a href="https://github.com/core-618/cirk" target="_blank" rel="noopener">GitHub →</a>
       </div>
     </div>
@@ -26,7 +27,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <h1>Stop estimating.<br />Start controlling AI execution.</h1>
-      <p class="hero-clarify">CIRK replaces story points with a model that defines how AI should execute, review, and deploy work.</p>
+      <p class="hero-clarify">A proposed standard that replaces story points with a model that defines how AI should execute, review, and deploy work.</p>
 
       <!-- Model summary -->
       <div class="hero-model">
@@ -218,7 +219,7 @@ import Layout from '../layouts/Layout.astro';
             <span>A product or platform</span>
           </div>
         </div>
-        <p class="not-cirk-close">CIRK is an execution standard for AI-native development.</p>
+        <p class="not-cirk-close">CIRK is a proposed execution standard for AI-native development.</p>
       </div>
 
     </div>
@@ -557,7 +558,8 @@ import Layout from '../layouts/Layout.astro';
       <p class="label mono">Open standard</p>
       <h2>CIRK is not a product.</h2>
       <p class="section-sub">
-        It is an open standard for execution governance in AI-native software development.
+        It is a proposed open standard for execution governance in AI-native software development.
+        We are looking for teams willing to test it.
       </p>
       <p class="open-body">
         It can be adopted in issue trackers, coding agents, pull request workflows,
@@ -631,7 +633,7 @@ import Layout from '../layouts/Layout.astro';
             <span class="faq-icon mono">+</span>
           </summary>
           <div class="faq-body">
-            <p>No. Orbit618 is one possible implementation environment for CIRK, but CIRK is designed as a standalone open standard.</p>
+            <p>No. Orbit618 is one possible implementation environment for CIRK, but CIRK is designed as a standalone proposed open standard.</p>
           </div>
         </details>
 
@@ -663,7 +665,7 @@ import Layout from '../layouts/Layout.astro';
             <span class="faq-icon mono">+</span>
           </summary>
           <div class="faq-body">
-            <p>CIRK is a standard — not a framework, not a tool. It defines a shared language for execution governance. Any team, tool, or platform can implement it. MIT licensed.</p>
+            <p>CIRK is a proposed standard — not a framework, not a tool. It defines a shared language for execution governance. Any team, tool, or platform can implement it. MIT licensed. We are looking for teams willing to test it.</p>
           </div>
         </details>
 
@@ -691,11 +693,46 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- OPEN QUESTIONS -->
+  <section class="section" id="open-questions">
+    <div class="container narrow">
+      <p class="label mono">Open questions</p>
+      <h2>Where CIRK might be wrong.</h2>
+      <p class="section-sub">These are tensions we are still debating. If you have answers or counterexamples, we want to hear them.</p>
+
+      <div class="oq-list">
+        <div class="oq-item">
+          <span class="oq-num mono">1</span>
+          <div>
+            <p class="oq-question">What happens to roadmap predictability without story points?</p>
+            <p class="oq-context">CIRK governs execution, not timelines. Teams that depend on velocity charts and burndowns may lose a planning signal. Is execution governance enough, or does a complementary time layer still matter?</p>
+          </div>
+        </div>
+        <div class="oq-item">
+          <span class="oq-num mono">2</span>
+          <div>
+            <p class="oq-question">Does CIRK cover governance beyond engineering?</p>
+            <p class="oq-context">CIRK models Context, Iteration, Review, and Integration Risk for software tasks. But execution governance in production systems also involves compliance, reversibility, and audit trails. Should CIRK expand or stay scoped to engineering?</p>
+          </div>
+        </div>
+        <div class="oq-item">
+          <span class="oq-num mono">3</span>
+          <div>
+            <p class="oq-question">How does CIRK coexist with Scrum, Kanban, and SAFe?</p>
+            <p class="oq-context">CIRK replaces the estimation layer, not the process. But in practice, story points are deeply embedded in sprint planning, capacity allocation, and stakeholder reporting. Can CIRK slot in without disrupting those flows?</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="oq-cta">Have a perspective? <a href="https://github.com/core-618/cirk/issues" target="_blank" rel="noopener">Open an issue on GitHub →</a></p>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="section cta-section">
     <div class="container narrow center">
-      <h2>Start using CIRK today.</h2>
-      <p class="section-sub">MIT licensed. No dependencies. Works with anything.</p>
+      <h2>Try CIRK with your team.</h2>
+      <p class="section-sub">MIT licensed. No dependencies. Works with anything. We want to see where it fails.</p>
       <div class="hero-cta">
         <a href="https://github.com/core-618/cirk" class="btn-primary" target="_blank" rel="noopener">Read the spec →</a>
         <a href="#examples" class="btn-ghost">View examples</a>
@@ -921,6 +958,15 @@ import Layout from '../layouts/Layout.astro';
   .rule-row:last-child { border-bottom: none; }
   .rule-signal { color: var(--amber); font-size: 13px; min-width: 28px; }
   .rule-row span:last-child { font-size: 13px; color: var(--text-muted); }
+
+  /* ── Open Questions ── */
+  .oq-list { display: flex; flex-direction: column; gap: 28px; margin-top: 40px; }
+  .oq-item { display: flex; gap: 20px; align-items: flex-start; padding: 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); }
+  .oq-num { font-size: 20px; font-weight: 600; color: var(--accent); min-width: 28px; line-height: 1.4; }
+  .oq-question { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+  .oq-context { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+  .oq-cta { margin-top: 32px; font-size: 14px; color: var(--text-secondary); }
+  .oq-cta a { color: var(--accent); }
 
   /* ── Quick Start ── */
   .qs-steps { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; max-width: 480px; margin-left: auto; margin-right: auto; text-align: left; }
